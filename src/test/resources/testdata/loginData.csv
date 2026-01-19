@@ -1,0 +1,8 @@
+email,password,expectedResult,testCase
+valid.user@amazon.com,ValidPassword123!,SUCCESS,Valid credentials login
+invalid.user@amazon.com,WrongPassword123,FAIL,Invalid email login
+test.user@test.com,IncorrectPassword,FAIL,Incorrect password
+user@example.com,Password@123,SUCCESS,Standard credentials
+admin@amazon.com,AdminPass123!,SUCCESS,Admin user login
+special.user+test@amazon.com,SpecialPassword123,SUCCESS,Special character in email
+user.with.dots@amazon.com,DottedPassword123,SUCCESS,Email with dots

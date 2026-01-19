@@ -1,0 +1,11 @@
+productName,searchTerm,expectedPrice,expectedRating,category
+Laptop Dell XPS,Dell XPS,90000,4.5,Electronics
+iPhone 14,iPhone 14,79999,4.7,Mobile Phones
+Samsung Monitor,Samsung Monitor,25000,4.3,Monitors
+Sony Headphones,Sony Headphones,15000,4.6,Audio
+Logitech Mouse,Logitech Mouse,2500,4.4,Computer Accessories
+Kingston SSD,Kingston SSD,5000,4.8,Storage Devices
+Apple iPad,Apple iPad,45000,4.5,Tablets
+Canon Camera,Canon Camera,35000,4.2,Photography
+Seagate HDD,Seagate HDD,4500,4.1,Storage Devices
+Lenovo Tablet,Lenovo Tablet,18000,4.3,Tablets

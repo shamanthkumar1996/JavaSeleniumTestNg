@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Amazon Testing Framework Suite" verbose="2" parallel="tests" thread-count="1">
+    <!-- TestNG Listeners for Allure Report and Custom Reporting -->
+    <listeners>
+        <listener class-name="listeners.TestListener"/>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+
+    <!-- Test Suite for Login Tests -->
+    <test name="Login Tests" enabled="true">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="tests.LoginTests">
+                <methods>
+                    <include name="testLoginPageIsDisplayed"/>
+                    <include name="testLoginWithValidCredentials"/>
+                    <include name="testLoginWithCSVData"/>
+                    <include name="testLoginWithInvalidCredentials"/>
+                    <include name="testLoginWithEmptyFields"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Test Suite for Search Tests -->
+    <test name="Search Tests" enabled="true">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="tests.SearchTests">
+                <methods>
+                    <include name="testSearchProduct"/>
+                    <include name="testMultipleProductSearch"/>
+                    <include name="testSearchResultsPageElements"/>
+                    <include name="testClickProductFromSearchResults"/>
+                    <include name="testNextPageNavigation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Test Suite for Product Tests -->
+    <test name="Product Tests" enabled="true">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="tests.ProductTests">
+                <methods>
+                    <include name="testViewProductDetails"/>
+                    <include name="testGetProductInformation"/>
+                    <include name="testAddToCart"/>
+                    <include name="testBrowseMultipleProducts"/>
+                    <include name="testProductRatingDisplay"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Alternative: Run all tests from a package
+    <test name="All Tests">
+        <parameter name="browser" value="chrome"/>
+        <packages>
+            <package name="tests"/>
+        </packages>
+    </test>
+    -->
+</suite>
