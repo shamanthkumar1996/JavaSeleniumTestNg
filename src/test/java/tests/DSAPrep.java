@@ -1,6 +1,8 @@
 package tests;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Stack;
 
 public class DSAPrep {
@@ -13,6 +15,9 @@ public class DSAPrep {
         System.out.println(stringReversalWithSpacesPreserved(str2));
 
         System.out.println(reverseWord(str2));
+        System.out.println(countDistinctSubstrings("abcd"));
+        System.out.println(firstNonrepeatingChar("abcd"));
+        System.out.println(MostRepeatedWords("your love is not a love it it it is a curse for you and your love ones"));
 
     }
 
@@ -110,4 +115,56 @@ public class DSAPrep {
 
     }
 
+      public static int countDistinctSubstrings(String s) {
+        Set<String> set = new HashSet<>();
+        int n = s.length();
+
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j <= n; j++) {
+                set.add(s.substring(i, j));
+            }
+        }
+        return set.size();
+    }
+
+    public static boolean firstNonrepeatingChar(String str){
+
+        for( char c : str.toCharArray()){
+            if(str.indexOf(c) == str.lastIndexOf(c)){
+                return true;
+            }
+
+        }
+    
+            return false;
+       
+
+    }
+
+    public static String MostRepeatedWords(String str){
+        String str2 = "your love is not a love it it it is a curse for you and your love ones";
+
+        String[] strarry = str.split("\\s+");
+        HashMap<String,Integer> map = new HashMap<>();
+        int max =0;
+        String maxStr ="";
+
+        for( String str3: strarry){
+            map.put(str3, map.getOrDefault(str3,0)+1);
+        }
+
+        for(String m : map.keySet()){
+            if (map.get(m)>max){
+                max = map.get(m);
+                maxStr = m;
+            }
+
+
+        }
+
+        System.out.println(maxStr);
+        return maxStr;
+
+
+    }
 }
